@@ -13,7 +13,7 @@ int check_cycle(listint_t *head)
 	while (head && turtle->next && hare->next->next)
 	{
 		hare = hare->next->next;
-		turtle = hare->next;
+		turtle = turtle->next;
 		if (turtle == hare)
 			return (1);
 	}
