@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 from models.base import Base
 
+
 class Rectangle(Base):
     """My class Rectangle that inheritance of Base class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
         self.height = height
@@ -13,7 +15,7 @@ class Rectangle(Base):
     @property
     def width(self):
         return self.__width
-   
+
     @width.setter
     def width(self, value):
         self.validate("width", value)
@@ -22,7 +24,7 @@ class Rectangle(Base):
     @property
     def height(self):
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         self.validate("height", value)
@@ -31,7 +33,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         self.validate("x", value)
@@ -45,7 +47,7 @@ class Rectangle(Base):
     def y(self, value):
         self.validate("y", value)
         self.__y = value
-    
+
     @staticmethod
     def validate(name, value):
         if type(value) is not int:
@@ -62,11 +64,12 @@ class Rectangle(Base):
     def display(self):
         print("\n" * self.y, end="")
         for i in range(self.__height):
-            print(" " * self.x  + "#" * self.width, end="")
+            print(" " * self.x + "#" * self.width, end="")
             print()
-    
+
     def __str__(self):
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                        self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
         if len(args) != 0:

@@ -2,8 +2,10 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """My class Square that inhiretance of Rectangle class"""
+
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
@@ -28,8 +30,8 @@ class Square(Rectangle):
                 pass
         else:
             for key, value in kwargs.items():
-                self.__setattr__(key, value)   
-    
+                self.__setattr__(key, value)
+
     def to_dictionary(self):
         keys = ["id", "size", "x", "y"]
         dicty = {}
@@ -38,4 +40,5 @@ class Square(Rectangle):
         return dicty
 
     def __str__(self):
-        return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width))
+        return ("[Square] ({}) {}/{} - {}".format(self.id,
+                                                  self.x, self.y, self.width))
