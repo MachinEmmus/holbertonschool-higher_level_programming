@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Base Class
+"""
 
 
 class Base:
@@ -6,7 +9,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """My init method""" 
+        """My init method"""
         if id is not None:
             self.id = id
         else:
