@@ -1,0 +1,3 @@
+-- Show Database in MySQL
+-- ...
+SHOW DATABASES;
