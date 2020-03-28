@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Scripts that list all register that start with 'n'""" 
 
-
 if __name__ == "__main__":
 
     import sys
