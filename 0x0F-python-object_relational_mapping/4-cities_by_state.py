@@ -10,10 +10,11 @@ if __name__ == "__main__":
 
     db = MySQLdb.connect(host="localhost", user=user, passwd=paswd, db=db_name)
     cur = db.cursor()
-    cur.execute("SELECT * FROM `cities` INNER JOIN `states` ON state_id = states.id ORDER BY cities.id ASC")
+    cur.execute("SELECT * FROM `cities`\
+                 JOIN `states` ON state_id = states.id\
+                 ORDER BY cities.id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
     cur.close()
     db.close()
-
