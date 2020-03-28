@@ -13,7 +13,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=user, passwd=paswd, db=db_name)
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE `name` = \"{}\" ORDER BY id ASC".format(v))
+        "SELECT * FROM states WHERE `name`\
+         LIKE \"{}\" ORDER BY id ASC".format(v))
     rows = cur.fetchall()
     for row in rows:
         print(row)
