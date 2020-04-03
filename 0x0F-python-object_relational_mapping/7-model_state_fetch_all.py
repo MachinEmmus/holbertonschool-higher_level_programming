@@ -12,6 +12,5 @@ if __name__ == "__main__":
     eng = create_engine(con.format(user, passwd, db_name), pool_pre_ping=True)
     Session = sessionmaker(bind=eng)
     session = Session()
-    query = session.query(State).order_by(State.id).all()
-    for item in query:
+    for item in session.query(State).order_by(State.id).all():
         print("{}: {}".format(item.id, item.name))

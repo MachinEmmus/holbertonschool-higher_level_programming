@@ -12,7 +12,7 @@ if __name__ == "__main__":
     eng = create_engine(con.format(user, passwd, db_name), pool_pre_ping=True)
     Session = sessionmaker(bind=eng)
     session = Session()
-    query = session.query(State).\
-        filter(State.name.ilike("%a%")).order_by(State.id).all()
+    query = session.query(State).filter(State.name.ilike("%a%")).\
+            order_by(State.id).all()
     for item in query:
-        print("{}: {}".format(item.id, item.name)
+        print("{}: {}".format(item.id, item.name))
