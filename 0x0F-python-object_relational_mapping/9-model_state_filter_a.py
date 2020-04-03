@@ -13,6 +13,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=eng)
     session = Session()
     query = session.query(State).filter(State.name.ilike("%a%")).\
-            order_by(State.id).all()
+        order_by(State.id).all()
     for item in query:
         print("{}: {}".format(item.id, item.name))
