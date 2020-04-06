@@ -14,5 +14,6 @@ if __name__ == "__main__":
     eng = create_engine(con.format(user, passwd, db_name), pool_pre_ping=True)
     Session = sessionmaker(bind=eng)
     session = Session()
-    for sta, cit in session.query(State, City).all():
-        print("{}: ({}) {}".format(sta.name, cit.id, cit.name))
+    query = session.query(State, City).filter(City.state_id == State.id).all()
+    for row in query:
+        print("{}: ({}) {}".format(row[0].name, row[1].id, row[1].name))
