@@ -1,19 +1,17 @@
 #!/usr/bin/node
-
-function secondBig (array) {
-  if (array.length === 2 || array.length === 3) { return (0); }
-
-  let max = array[2];
-  let secondMax = array[3];
-
-  for (let i = 2; i < array.length; i++) {
-    if (array[i] > max) {
-      secondMax = max;
-      max = array[i];
-    } else if (array[i] > secondMax && array[i] < max) {
-      secondMax = array[i];
-    }
+// script that searches the second biggest integer in the list of arguments
+if (process.argv.length <= 3) {
+  console.log(0);
+} else {
+  const array = [];
+  for (let i = 2; i < process.argv.length; i++) {
+    array.push(parseInt(process.argv[i]));
   }
-  return (secondMax);
+  array.sort(max);
+  array.pop();
+  console.log(array[array.length - 1]);
 }
-console.log(secondBig(process.argv));
+
+function max (num1, num2) {
+  return num1 - num2;
+}
