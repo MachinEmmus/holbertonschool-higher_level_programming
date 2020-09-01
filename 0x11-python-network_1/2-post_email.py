@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Module Documentation"""
 import urllib.request
 import urllib.parse
 import sys
