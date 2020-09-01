@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Module is document"""
 
 def find_peak(value):
     '''
